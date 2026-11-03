@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability / 安全性漏洞
+    url: https://github.com/eric861129/MAD-Releases/security/advisories/new
+    about: Report privately, not in a public issue. / 請私下回報，不要開公開的 issue。
