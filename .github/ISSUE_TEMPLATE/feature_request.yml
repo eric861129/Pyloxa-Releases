@@ -1,5 +1,5 @@
 name: Feature request / 功能建議
-description: Suggest something MAD could do. / 建議 MAD 可以做的事。
+description: Suggest something Pyloxa could do. / 建議 Pyloxa 可以做的事。
 labels: [enhancement]
 body:
   - type: textarea

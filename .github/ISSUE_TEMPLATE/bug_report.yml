@@ -1,5 +1,5 @@
 name: Bug report / 問題回報
-description: Something in MAD does not work as expected. / MAD 的行為不如預期。
+description: Something in Pyloxa does not work as expected. / Pyloxa 的行為不如預期。
 labels: [bug]
 body:
   - type: markdown
@@ -10,8 +10,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: MAD version / MAD 版本
-      description: Help → About MAD, or the installer file name. / 說明 → 關於 MAD，或安裝檔的檔名。
+      label: Pyloxa version / Pyloxa 版本
+      description: Help → About Pyloxa, or the installer file name. / 說明 → 關於 Pyloxa，或安裝檔的檔名。
       placeholder: "0.1.0"
     validations:
       required: true
@@ -34,7 +34,7 @@ body:
     id: what
     attributes:
       label: What happened / 發生什麼事
-      description: Include the message MAD showed, if any. / 如果 MAD 有顯示訊息，請一併附上。
+      description: Include the message Pyloxa showed, if any. / 如果 Pyloxa 有顯示訊息，請一併附上。
     validations:
       required: true
   - type: textarea
