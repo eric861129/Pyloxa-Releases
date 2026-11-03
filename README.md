@@ -15,7 +15,7 @@ Get `Pyloxa-Setup-<version>.exe` from the [latest release](https://github.com/er
 
 - Windows 10 or 11, 64-bit
 - [Git for Windows](https://git-scm.com/download/win)
-- At least one agent CLI, installed and signed in:
+- At least one agent CLI, installed and signed in with your subscription (or set up with your own API key in Pyloxa):
   - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude`), tested with 2.1.316
   - [Codex CLI](https://developers.openai.com/codex/cli) (`codex`), tested with 0.166.0
 - Optional: [GitHub CLI](https://cli.github.com/) (`gh`), signed in, for pull requests and CI status
@@ -28,7 +28,7 @@ Routing and fallback are most useful with both CLIs installed.
 2. Optional: check the file against the SHA-256 listed in the release notes.
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.0.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.1.exe -Algorithm SHA256
    ```
 
 3. Run the installer. It is not code-signed yet, so Windows SmartScreen may say "Windows protected your PC". Choose **More info**, then **Run anyway**.
@@ -38,15 +38,17 @@ Pyloxa does not update itself yet. Download new versions from this page.
 
 ## First run
 
-1. Open the **Connections** page and check that each CLI shows as signed in. If one is not, sign in from a terminal (`claude`, or `codex login`).
+1. Open Pyloxa. If no CLI is ready yet, it shows what to install and the sign-in command to copy into a terminal (`claude auth login` or `codex login`), and re-detects when you come back. The **Connections** page shows each CLI's status.
+   To pay per use instead of a subscription, choose **Use an API key** for that CLI on the **Connections** page.
 2. Open a project folder that is a git repository.
 3. Describe what you want done. The brain reads the project first and asks before it plans anything big.
 
 ## Costs, privacy and credentials
 
-- Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions; Pyloxa does not resell or proxy any AI service.
+- Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
 - Pyloxa has no server and collects no telemetry. Your code goes only where the CLIs send it, under Anthropic's and OpenAI's terms.
 - Pyloxa checks sign-in status with each CLI's own command. It never reads, copies or sends CLI tokens or credential files.
+- If you add an API key, Pyloxa encrypts it with Windows secure storage and passes it only to the CLI process that runs your work.
 - Agents work in separate git worktrees. Pyloxa never stashes, resets or checks out your working directory, and nothing is merged or pushed until you choose to.
 
 ## Reporting a problem
@@ -80,7 +82,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 
 - Windows 10 或 11（64 位元）
 - [Git for Windows](https://git-scm.com/download/win)
-- 至少一個已安裝並登入的 Agent CLI：
+- 至少一個已安裝並以訂閱帳號登入的 Agent CLI（也可以在 Pyloxa 改用自己的 API Key）：
   - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)（`claude`），已測試 2.1.316
   - [Codex CLI](https://developers.openai.com/codex/cli)（`codex`），已測試 0.166.0
 - 選用：已登入的 [GitHub CLI](https://cli.github.com/)（`gh`），用來建立 pull request 與查看 CI 結果
@@ -93,7 +95,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 2. 選用：比對安裝檔與版本說明裡的 SHA-256。
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.0.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.1.exe -Algorithm SHA256
    ```
 
 3. 執行安裝檔。安裝檔目前還沒有程式碼簽章，Windows SmartScreen 可能顯示「Windows 已保護您的電腦」，請按「其他資訊」，再按「仍要執行」。
@@ -103,15 +105,17 @@ Pyloxa 目前不會自動更新，新版本請到這個頁面下載。
 
 ### 第一次使用
 
-1. 打開「連線」頁，確認每個 CLI 都顯示已登入；沒有的話請在終端機登入（`claude` 或 `codex login`）。
+1. 開啟 Pyloxa。還沒有 CLI 可以用時，它會說明要安裝什麼，並提供可以複製到終端機的登入指令（`claude auth login` 或 `codex login`），回到 Pyloxa 時自動重新偵測。「連線」頁會顯示每個 CLI 的狀態。
+   想按用量付費、不用訂閱的話，在「連線」頁把那個 CLI 改成「改用 API Key」。
 2. 開啟一個 git repo 的專案資料夾。
 3. 說出你想完成的事。大腦會先讀過專案，規模大一點的計畫會先問過你。
 
 ### 費用、隱私與憑證
 
-- Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡；Pyloxa 不轉售、也不代理任何 AI 服務。
+- Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
 - Pyloxa 沒有伺服器，也不收集使用資料。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic 與 OpenAI 的條款。
 - Pyloxa 只用各 CLI 自己的指令查詢登入狀態，從不讀取、複製或傳送 CLI 的 token 與憑證檔。
+- 你設定的 API Key 會以 Windows 的安全儲存加密，只交給執行工作的 CLI 程序。
 - Agent 在獨立的 git worktree 工作。Pyloxa 不會對你的工作目錄執行 stash、reset 或 checkout；要不要合併、要不要推送，都由你決定。
 
 ### 回報問題
