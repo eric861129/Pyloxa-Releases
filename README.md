@@ -16,9 +16,9 @@ Get `Pyloxa-Setup-<version>.exe` from the [latest release](https://github.com/er
 - Windows 10 or 11, 64-bit
 - [Git for Windows](https://git-scm.com/download/win)
 - At least one agent CLI, installed and signed in with your subscription (or set up with your own API key in Pyloxa):
-  - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude`), tested with 2.1.316–2.1.317
+  - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude`), tested with 2.1.316–2.1.318
   - [Codex CLI](https://developers.openai.com/codex/cli) (`codex`), tested with 0.166.0
-- Optional, experimental: [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`gemini`) with your own paid Gemini API key, tested with 0.42.0. Google account sign-in and AI Pro or Ultra subscriptions are not supported.
+- Optional, experimental: [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`gemini`) with your own paid Gemini API key, tested with 0.42.0 and 0.66.0. Google account sign-in and AI Pro or Ultra subscriptions are not supported.
 - Optional: [GitHub CLI](https://cli.github.com/) (`gh`), signed in, for pull requests and CI status
 
 Other patch versions in the same series (for example Claude Code 2.1.x) run without a warning.
@@ -31,7 +31,7 @@ New installs start with a default flow: Claude Code is the brain and handles fro
 2. Optional: check the file against the SHA-256 listed in the release notes.
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.3.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.4.exe -Algorithm SHA256
    ```
 
 3. Run the installer. It is not code-signed yet, so Windows SmartScreen may say "Windows protected your PC". Choose **More info**, then **Run anyway**.
@@ -50,11 +50,12 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 
 - Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
 - Pyloxa has no server and collects no telemetry. Your code goes only where the CLIs send it, under Anthropic's, OpenAI's and Google's terms.
-- Pyloxa asks GitHub for the latest Pyloxa version at startup and every 12 hours, with no project or usage data. Turn it off in **Settings → Notifications and updates**.
-- The **Skills** page reads only the skills folders of each CLI and of the open project, and changes nothing.
+- Pyloxa asks GitHub for the latest Pyloxa version and the [CLI compatibility catalog](#cli-compatibility-catalog) at startup and every 12 hours, with no project or usage data. Turn it off in **Settings → Notifications and updates**.
+- In the free version, the **Skills** page reads only the skills folders of each CLI and of the open project, and changes nothing.
 - Usage statistics in **Settings** are computed on your computer and never sent.
 - Pyloxa checks sign-in status with each CLI's own command. It never reads, copies or sends CLI tokens or credential files.
 - If you add an API key, Pyloxa encrypts it with Windows secure storage and passes it only to the CLI process that runs your work.
+- Gemini CLI runs in a separate settings folder that allows only your API key, so Pyloxa never uses a Google account sign-in or subscription.
 - Agents work in separate git worktrees. Pyloxa never stashes, resets or checks out your working directory, and nothing is merged or pushed until you choose to.
 
 ## CLI compatibility catalog
@@ -93,9 +94,9 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 - Windows 10 或 11（64 位元）
 - [Git for Windows](https://git-scm.com/download/win)
 - 至少一個已安裝並以訂閱帳號登入的 Agent CLI（也可以在 Pyloxa 改用自己的 API Key）：
-  - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)（`claude`），已測試 2.1.316–2.1.317
+  - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)（`claude`），已測試 2.1.316–2.1.318
   - [Codex CLI](https://developers.openai.com/codex/cli)（`codex`），已測試 0.166.0
-- 選用、實驗性：[Gemini CLI](https://github.com/google-gemini/gemini-cli)（`gemini`），搭配你自己的付費 Gemini API Key，已測試 0.42.0。不支援 Google 帳號登入與 AI Pro、Ultra 訂閱。
+- 選用、實驗性：[Gemini CLI](https://github.com/google-gemini/gemini-cli)（`gemini`），搭配你自己的付費 Gemini API Key，已測試 0.42.0 與 0.66.0。不支援 Google 帳號登入與 AI Pro、Ultra 訂閱。
 - 選用：已登入的 [GitHub CLI](https://cli.github.com/)（`gh`），用來建立 pull request 與查看 CI 結果
 
 同系列的其他修補版（例如 Claude Code 2.1.x）不會顯示警告。
@@ -108,7 +109,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 2. 選用：比對安裝檔與版本說明裡的 SHA-256。
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.3.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.4.exe -Algorithm SHA256
    ```
 
 3. 執行安裝檔。安裝檔目前還沒有程式碼簽章，Windows SmartScreen 可能顯示「Windows 已保護您的電腦」，請按「其他資訊」，再按「仍要執行」。
@@ -127,11 +128,12 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 
 - Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
 - Pyloxa 沒有伺服器，也不收集使用資料。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic、OpenAI 與 Google 的條款。
-- Pyloxa 啟動時和每 12 小時會向 GitHub 查詢最新版本，不含任何專案或使用資料；可以在「設定 → 通知與更新」關閉。
-- 「Skills」頁只讀取各 CLI 與開啟中專案的 Skills 資料夾，不做任何修改。
+- Pyloxa 啟動時和每 12 小時會向 GitHub 查詢最新版本與 [CLI 相容性目錄](#cli-相容性目錄)，不含任何專案或使用資料；可以在「設定 → 通知與更新」關閉。
+- 免費版的「Skills」頁只讀取各 CLI 與開啟中專案的 Skills 資料夾，不做任何修改。
 - 「設定」頁的使用統計只在你的電腦計算，不會傳送。
 - Pyloxa 只用各 CLI 自己的指令查詢登入狀態，從不讀取、複製或傳送 CLI 的 token 與憑證檔。
 - 你設定的 API Key 會以 Windows 的安全儲存加密，只交給執行工作的 CLI 程序。
+- Gemini CLI 在只允許你的 API Key 的獨立設定資料夾中執行，Pyloxa 不會使用 Google 帳號登入或訂閱。
 - Agent 在獨立的 git worktree 工作。Pyloxa 不會對你的工作目錄執行 stash、reset 或 checkout；要不要合併、要不要推送，都由你決定。
 
 ### CLI 相容性目錄
