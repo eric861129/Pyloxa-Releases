@@ -57,6 +57,10 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 - If you add an API key, Pyloxa encrypts it with Windows secure storage and passes it only to the CLI process that runs your work.
 - Agents work in separate git worktrees. Pyloxa never stashes, resets or checks out your working directory, and nothing is merged or pushed until you choose to.
 
+## CLI compatibility catalog
+
+[`compat/catalog.json`](compat/catalog.json) tells Pyloxa which CLI versions have been verified, the latest official version of each CLI, suggested model names and reasoning levels, and any notices. Pyloxa reads it together with the update check, so new CLI versions and models don't have to wait for a Pyloxa release. A GitHub Action updates the latest versions daily; verified versions are added only after testing.
+
 ## Reporting a problem
 
 [Open an issue](https://github.com/eric861129/Pyloxa-Releases/issues/new/choose) and include your Pyloxa version, Windows version and CLI versions. In Pyloxa, **Settings → Usage and feedback → Copy diagnostics** copies all of them, with no project data.
@@ -129,6 +133,10 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 - Pyloxa 只用各 CLI 自己的指令查詢登入狀態，從不讀取、複製或傳送 CLI 的 token 與憑證檔。
 - 你設定的 API Key 會以 Windows 的安全儲存加密，只交給執行工作的 CLI 程序。
 - Agent 在獨立的 git worktree 工作。Pyloxa 不會對你的工作目錄執行 stash、reset 或 checkout；要不要合併、要不要推送，都由你決定。
+
+### CLI 相容性目錄
+
+[`compat/catalog.json`](compat/catalog.json) 記錄 Pyloxa 驗證過的 CLI 版本、各 CLI 的官方最新版本、建議的模型名稱與推理等級，以及公告。Pyloxa 在查詢新版本時一起讀取，所以 CLI 或模型的更新不必等 Pyloxa 發新版。官方最新版本由 GitHub Action 每天更新；已驗證的版本要實際測試過才加入。
 
 ### 回報問題
 
