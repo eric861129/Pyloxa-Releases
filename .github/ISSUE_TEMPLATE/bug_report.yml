@@ -11,8 +11,8 @@ body:
     id: version
     attributes:
       label: Pyloxa version / Pyloxa 版本
-      description: Help → About Pyloxa, or the installer file name. / 說明 → 關於 Pyloxa，或安裝檔的檔名。
-      placeholder: "0.1.0"
+      description: Settings → Usage and feedback → Copy diagnostics, or the installer file name. / 設定 → 使用統計與回報 → 複製診斷資訊，或安裝檔的檔名。
+      placeholder: "0.1.2"
     validations:
       required: true
   - type: input
@@ -26,8 +26,8 @@ body:
     id: clis
     attributes:
       label: Agent CLIs and versions / Agent CLI 與版本
-      description: Output of `claude --version`, `codex --version`, `git --version` / 上述指令的輸出
-      placeholder: "Claude Code 2.1.316, Codex CLI 0.166.0, git 2.51.0"
+      description: Paste Pyloxa's diagnostics, or the output of `claude --version`, `codex --version`, `gemini --version`, `git --version` / 貼上 Pyloxa 的診斷資訊，或上述指令的輸出
+      placeholder: "Claude Code 2.1.317, Codex CLI 0.166.0, Gemini CLI 0.42.0, git 2.51.0"
     validations:
       required: true
   - type: textarea
