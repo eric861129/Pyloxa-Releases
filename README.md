@@ -23,7 +23,7 @@ Get `Pyloxa-Setup-<version>.exe` from the [latest release](https://github.com/er
 
 Other patch versions in the same series (for example Claude Code 2.1.x) run without a warning.
 
-New installs start with a default flow: Claude Code is the brain and handles frontend work and video editing, Codex handles backend work and image generation, and Gemini handles writing and docs. Tasks for an agent you haven't set up go to the brain. Change any of this on the **Routing rules** page.
+New installs start with a default flow: Claude Code is the brain and handles frontend work and video editing, and Codex handles backend work and image generation. Writing, docs and anything else go to the brain, and so do tasks for an agent you haven't set up. The setup wizard adjusts this to the agents you have, and you can change it any time on the **Routing rules** page.
 
 ## Install
 
@@ -31,7 +31,7 @@ New installs start with a default flow: Claude Code is the brain and handles fro
 2. Optional: check the file against the SHA-256 listed in the release notes.
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.4.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.5.exe -Algorithm SHA256
    ```
 
 3. Run the installer. It is not code-signed yet, so Windows SmartScreen may say "Windows protected your PC". Choose **More info**, then **Run anyway**.
@@ -41,7 +41,7 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 
 ## First run
 
-1. Open Pyloxa. If no CLI is ready yet, it shows what to install and the sign-in command to copy into a terminal (`claude auth login` or `codex login`), and re-detects when you come back. The **Connections** page shows each CLI's status.
+1. Open Pyloxa. A setup wizard checks git and Node.js, can install the agent CLIs with their official npm commands, and shows the sign-in command to copy into a terminal (`claude auth login` or `codex login`); it re-detects when you come back. Then you pick the brain and who does what. You can reopen the wizard from **Settings**, and the **Connections** page shows each CLI's status.
    To pay per use instead of a subscription, choose **Use an API key** for that CLI on the **Connections** page. Gemini CLI always uses an API key.
 2. Open a project folder that is a git repository.
 3. Describe what you want done. The brain reads the project first and asks before it plans anything big.
@@ -101,7 +101,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 
 同系列的其他修補版（例如 Claude Code 2.1.x）不會顯示警告。
 
-新安裝時會套用預設流程：Claude Code 擔任大腦，負責前端與影片剪輯；Codex 負責後端與生圖；Gemini 負責文章與文件。還沒設定的 Agent，它的工作交給大腦。這些都可以在「派工規則」頁修改。
+新安裝時會套用預設流程：Claude Code 擔任大腦，負責前端與影片剪輯；Codex 負責後端與生圖。文章、文件與其他工作交給大腦，還沒設定的 Agent 的工作也交給大腦。設定精靈會依你有的 Agent 調整，之後也可以隨時在「派工規則」頁修改。
 
 ### 安裝
 
@@ -109,7 +109,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 2. 選用：比對安裝檔與版本說明裡的 SHA-256。
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.4.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.5.exe -Algorithm SHA256
    ```
 
 3. 執行安裝檔。安裝檔目前還沒有程式碼簽章，Windows SmartScreen 可能顯示「Windows 已保護您的電腦」，請按「其他資訊」，再按「仍要執行」。
@@ -119,7 +119,7 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 
 ### 第一次使用
 
-1. 開啟 Pyloxa。還沒有 CLI 可以用時，它會說明要安裝什麼，並提供可以複製到終端機的登入指令（`claude auth login` 或 `codex login`），回到 Pyloxa 時自動重新偵測。「連線」頁會顯示每個 CLI 的狀態。
+1. 開啟 Pyloxa。設定精靈會檢查 git 與 Node.js，可以用官方的 npm 命令安裝 Agent CLI，並提供可以複製到終端機的登入指令（`claude auth login` 或 `codex login`），回到 Pyloxa 時自動重新偵測；接著選大腦與分工。設定精靈可以從「設定」重新開啟，「連線」頁會顯示每個 CLI 的狀態。
    想按用量付費、不用訂閱的話，在「連線」頁把那個 CLI 改成「改用 API Key」。Gemini CLI 一律使用 API Key。
 2. 開啟一個 git repo 的專案資料夾。
 3. 說出你想完成的事。大腦會先讀過專案，規模大一點的計畫會先問過你。
