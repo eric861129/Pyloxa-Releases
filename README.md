@@ -18,7 +18,7 @@ Get `Pyloxa-Setup-<version>.exe` from the [latest release](https://github.com/er
 - At least one agent CLI, installed and signed in with your subscription (or set up with your own API key in Pyloxa):
   - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude`), tested with 2.1.316–2.1.318
   - [Codex CLI](https://developers.openai.com/codex/cli) (`codex`), tested with 0.166.0
-- Optional, experimental: [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`gemini`) with your own paid Gemini API key, tested with 0.42.0 and 0.66.0. Google account sign-in and AI Pro or Ultra subscriptions are not supported.
+- Optional, experimental: [Gemini CLI](https://github.com/google-gemini/gemini-cli) (`gemini`) with your own paid Gemini API key, tested with 0.42.0, 0.66.0 and 0.67.0. Google account sign-in and AI Pro or Ultra subscriptions are not supported.
 - Optional: [GitHub CLI](https://cli.github.com/) (`gh`), signed in, for pull requests and CI status
 
 Other patch versions in the same series (for example Claude Code 2.1.x) run without a warning.
@@ -96,7 +96,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 - 至少一個已安裝並以訂閱帳號登入的 Agent CLI（也可以在 Pyloxa 改用自己的 API Key）：
   - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)（`claude`），已測試 2.1.316–2.1.318
   - [Codex CLI](https://developers.openai.com/codex/cli)（`codex`），已測試 0.166.0
-- 選用、實驗性：[Gemini CLI](https://github.com/google-gemini/gemini-cli)（`gemini`），搭配你自己的付費 Gemini API Key，已測試 0.42.0 與 0.66.0。不支援 Google 帳號登入與 AI Pro、Ultra 訂閱。
+- 選用、實驗性：[Gemini CLI](https://github.com/google-gemini/gemini-cli)（`gemini`），搭配你自己的付費 Gemini API Key，已測試 0.42.0、0.66.0 與 0.67.0。不支援 Google 帳號登入與 AI Pro、Ultra 訂閱。
 - 選用：已登入的 [GitHub CLI](https://cli.github.com/)（`gh`），用來建立 pull request 與查看 CI 結果
 
 同系列的其他修補版（例如 Claude Code 2.1.x）不會顯示警告。
