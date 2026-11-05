@@ -1,10 +1,10 @@
-# 每天更新相容性目錄（compat/catalog.json）裡各 CLI 的官方最新版本，讓 Pyloxa 提示使用者有新版。
-# 只改 latest 與 updated；已驗證版本由人工重錄比對後才加入。
+# 每 6 小時更新相容性目錄（compat/catalog.json）裡各 CLI、Node.js 與 git 的官方最新版本，讓 Pyloxa 提示使用者有新版。
+# 只改 latest、Node.js 的最低版本與 updated；已驗證版本由人工重錄比對後才加入。
 name: Compat latest versions
 
 on:
   schedule:
-    - cron: "17 2 * * *"
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -24,6 +24,8 @@ jobs:
           node-version: 22
       - name: Update latest versions
         run: node scripts/update-latest.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit if changed
         run: |
           if git diff --quiet -- compat/catalog.json; then
@@ -33,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add compat/catalog.json
-          git commit -m "chore: 更新 CLI 的官方最新版本"
+          git commit -m "chore: 更新 CLI、Node.js 與 git 的官方最新版本"
           git push

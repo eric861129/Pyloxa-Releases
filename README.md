@@ -60,7 +60,7 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 
 ## CLI compatibility catalog
 
-[`compat/catalog.json`](compat/catalog.json) tells Pyloxa which CLI versions have been verified, the latest official version of each CLI, suggested model names and reasoning levels, and any notices. Pyloxa reads it together with the update check, so new CLI versions and models don't have to wait for a Pyloxa release. A GitHub Action updates the latest versions daily; verified versions are added only after testing.
+[`compat/catalog.json`](compat/catalog.json) tells Pyloxa which CLI versions have been verified, the latest official version of each CLI, the latest and minimum versions of git and Node.js, suggested model names and reasoning levels, and any notices. Pyloxa reads it together with the update check, so new CLI versions and models don't have to wait for a Pyloxa release. A GitHub Action updates the latest versions every 6 hours; verified versions are added only after testing.
 
 ## Reporting a problem
 
@@ -138,7 +138,7 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 
 ### CLI 相容性目錄
 
-[`compat/catalog.json`](compat/catalog.json) 記錄 Pyloxa 驗證過的 CLI 版本、各 CLI 的官方最新版本、建議的模型名稱與推理等級，以及公告。Pyloxa 在查詢新版本時一起讀取，所以 CLI 或模型的更新不必等 Pyloxa 發新版。官方最新版本由 GitHub Action 每天更新；已驗證的版本要實際測試過才加入。
+[`compat/catalog.json`](compat/catalog.json) 記錄 Pyloxa 驗證過的 CLI 版本、各 CLI 的官方最新版本、git 與 Node.js 的最新與最低版本、建議的模型名稱與推理等級，以及公告。Pyloxa 在查詢新版本時一起讀取，所以 CLI 或模型的更新不必等 Pyloxa 發新版。官方最新版本由 GitHub Action 每 6 小時更新；已驗證的版本要實際測試過才加入。
 
 ### 回報問題
 
