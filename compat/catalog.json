@@ -3,7 +3,7 @@
   "updated": "2026-11-06",
   "clis": {
     "claude-code": {
-      "latest": "2.1.318",
+      "latest": "2.1.319",
       "verified": [
         "2.1.316",
         "2.1.317",
