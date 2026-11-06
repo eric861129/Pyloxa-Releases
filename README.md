@@ -49,14 +49,14 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 ## Costs, privacy and credentials
 
 - Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
-- Pyloxa has no server and collects no telemetry. Your code goes only where the CLIs send it, under Anthropic's, OpenAI's and Google's terms.
+- Pyloxa never sends your code or prompts to us. Your code goes only where the CLIs send it, under Anthropic's, OpenAI's and Google's terms.
 - Pyloxa asks GitHub for the latest Pyloxa version and the [CLI compatibility catalog](#cli-compatibility-catalog) at startup and every 12 hours, with no project or usage data. Turn it off in **Settings → Notifications and updates**.
 - Shared memory stays on your computer. Memories are added to the prompts of every agent you use, so they reach each of those agents' providers.
 - While Pyloxa is open, it listens on random ports on `127.0.0.1` so the agents it starts can search and propose shared memories. Other computers can't connect, and each task's key stops working when the task ends.
 - Spell-check is off, so Pyloxa doesn't download a spell-check dictionary. Versions 0.1.8 and earlier downloaded an English dictionary from Google the first time they started.
 - Pyloxa changes your project's `AGENTS.md` and related files only when you use **Sync to CLIs** and choose to write them, and it never commits. It writes to the CLIs' user-level memory files (`~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.gemini/GEMINI.md`) only if you turn that on, only inside a marked block, and it backs up the originals first.
 - In the free version, the **Skills** page reads only the skills folders of each CLI and of the open project, and changes nothing.
-- Usage statistics in **Settings** are computed on your computer and never sent.
+- Usage statistics in **Settings** are computed on your computer. They are sent only if you turn on **Share anonymous usage stats** in **Settings → Usage and feedback**, which is off by default: one report a day with counts and categories only, never your prompts, code, file names, paths or account. You can preview each report, reset the anonymous ID or delete your data there. See the [privacy policy](https://pyloxa.com/privacy/#usage-statistics).
 - Pyloxa checks sign-in status with each CLI's own command. It never reads, copies or sends CLI tokens or credential files.
 - If you add an API key, Pyloxa encrypts it with Windows secure storage and passes it only to the CLI process that runs your work.
 - Gemini CLI runs in a separate settings folder that allows only your API key, so Pyloxa never uses a Google account sign-in or subscription.
@@ -131,14 +131,14 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 ### 費用、隱私與憑證
 
 - Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
-- Pyloxa 沒有伺服器，也不收集使用資料。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic、OpenAI 與 Google 的條款。
+- Pyloxa 不會把你的程式碼或提示內容傳給我們。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic、OpenAI 與 Google 的條款。
 - Pyloxa 啟動時和每 12 小時會向 GitHub 查詢最新版本與 [CLI 相容性目錄](#cli-相容性目錄)，不含任何專案或使用資料；可以在「設定 → 通知與更新」關閉。
 - 共用記憶只存在你的電腦。記憶會帶進你使用的每個 Agent 的 prompt，所以會送到這些 Agent 的供應商。
 - Pyloxa 開著的期間，會在 `127.0.0.1` 的隨機埠等候連線，讓它啟動的 Agent 搜尋與提議共用記憶。其他電腦連不上，每個工作的金鑰在工作結束後就失效。
 - 拼字檢查已關閉，Pyloxa 不會下載拼字檢查字典。0.1.8 以前的版本第一次啟動時會從 Google 下載英文字典。
 - 只有你使用「同步到各 CLI」並選擇寫入時，Pyloxa 才會修改專案的 `AGENTS.md` 與相關檔案，而且不會自動提交。各 CLI 的使用者層記憶檔（`~/.claude/CLAUDE.md`、`~/.codex/AGENTS.md`、`~/.gemini/GEMINI.md`）只有在你開啟該選項時才會寫入，只動標示好的區塊，並先備份原本的檔案。
 - 免費版的「Skills」頁只讀取各 CLI 與開啟中專案的 Skills 資料夾，不做任何修改。
-- 「設定」頁的使用統計只在你的電腦計算，不會傳送。
+- 「設定」頁的使用統計在你的電腦計算。只有你在「設定 → 使用統計與回報」開啟「匿名分享使用統計」（預設關閉）時才會傳送：每天一份，只有次數與類別，不含提示內容、程式碼、檔名、路徑或帳號。在同一頁可以預覽每份報告、重設匿名 ID 或刪除你的資料。詳見[隱私權政策](https://pyloxa.com/zh-TW/privacy/#usage-statistics)。
 - Pyloxa 只用各 CLI 自己的指令查詢登入狀態，從不讀取、複製或傳送 CLI 的 token 與憑證檔。
 - 你設定的 API Key 會以 Windows 的安全儲存加密，只交給執行工作的 CLI 程序。
 - Gemini CLI 在只允許你的 API Key 的獨立設定資料夾中執行，Pyloxa 不會使用 Google 帳號登入或訂閱。
