@@ -31,7 +31,7 @@ New installs start with a default flow: Claude Code is the brain and handles fro
 2. Optional: check the file against the SHA-256 listed in the release notes.
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.7.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.8.exe -Algorithm SHA256
    ```
 
 3. Run the installer. It is not code-signed yet, so Windows SmartScreen may say "Windows protected your PC". Choose **More info**, then **Run anyway**.
@@ -51,6 +51,8 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 - Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
 - Pyloxa has no server and collects no telemetry. Your code goes only where the CLIs send it, under Anthropic's, OpenAI's and Google's terms.
 - Pyloxa asks GitHub for the latest Pyloxa version and the [CLI compatibility catalog](#cli-compatibility-catalog) at startup and every 12 hours, with no project or usage data. Turn it off in **Settings → Notifications and updates**.
+- When Codex is installed and signed in with a subscription, the usage meter asks Codex CLI for your remaining Codex usage every 10 minutes while Pyloxa is open. Codex gets it from OpenAI with your own sign-in, and it uses none of your quota. Turn off the usage meter in **Settings → Appearance** to stop these checks.
+- Shared memory stays on your computer. Memories are added to the prompts of every agent you use, so they reach each of those agents' providers.
 - In the free version, the **Skills** page reads only the skills folders of each CLI and of the open project, and changes nothing.
 - Usage statistics in **Settings** are computed on your computer and never sent.
 - Pyloxa checks sign-in status with each CLI's own command. It never reads, copies or sends CLI tokens or credential files.
@@ -109,7 +111,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 2. 選用：比對安裝檔與版本說明裡的 SHA-256。
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.7.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.1.8.exe -Algorithm SHA256
    ```
 
 3. 執行安裝檔。安裝檔目前還沒有程式碼簽章，Windows SmartScreen 可能顯示「Windows 已保護您的電腦」，請按「其他資訊」，再按「仍要執行」。
@@ -129,6 +131,8 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 - Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
 - Pyloxa 沒有伺服器，也不收集使用資料。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic、OpenAI 與 Google 的條款。
 - Pyloxa 啟動時和每 12 小時會向 GitHub 查詢最新版本與 [CLI 相容性目錄](#cli-相容性目錄)，不含任何專案或使用資料；可以在「設定 → 通知與更新」關閉。
+- Codex 已安裝並以訂閱登入時，Pyloxa 開著的期間，額度一覽每 10 分鐘會請 Codex CLI 查詢 Codex 的剩餘額度；Codex 用你自己的登入向 OpenAI 取得，不消耗額度。在「設定 → 外觀」關閉額度一覽就不再查詢。
+- 共用記憶只存在你的電腦。記憶會帶進你使用的每個 Agent 的 prompt，所以會送到這些 Agent 的供應商。
 - 免費版的「Skills」頁只讀取各 CLI 與開啟中專案的 Skills 資料夾，不做任何修改。
 - 「設定」頁的使用統計只在你的電腦計算，不會傳送。
 - Pyloxa 只用各 CLI 自己的指令查詢登入狀態，從不讀取、複製或傳送 CLI 的 token 與憑證檔。
