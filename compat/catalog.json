@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "clis": {
     "claude-code": {
-      "latest": "2.1.319",
+      "latest": "2.1.321",
       "verified": [
         "2.1.316",
         "2.1.317",
