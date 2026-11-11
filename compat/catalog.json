@@ -56,7 +56,7 @@
     },
     "node": {
       "download": "https://nodejs.org/",
-      "latest": "26.13.0",
+      "latest": "26.13.1",
       "minimum": "22.0.0"
     }
   },
