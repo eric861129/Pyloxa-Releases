@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "clis": {
     "claude-code": {
       "latest": "2.1.322",
@@ -24,7 +24,7 @@
       "changelog": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
     },
     "codex": {
-      "latest": "0.167.0",
+      "latest": "0.167.1",
       "verified": [
         "0.166.0"
       ],
@@ -33,7 +33,7 @@
       "changelog": "https://github.com/openai/codex/releases"
     },
     "gemini-cli": {
-      "latest": "0.67.0",
+      "latest": "0.68.0",
       "verified": [
         "0.42.0",
         "0.66.0",
@@ -52,7 +52,7 @@
     "git": {
       "minimum": "2.30.0",
       "download": "https://git-scm.com/downloads/win",
-      "latest": "2.56.0"
+      "latest": "2.56.1"
     },
     "node": {
       "download": "https://nodejs.org/",
