@@ -46,6 +46,16 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 2. Open a project folder that is a git repository.
 3. Describe what you want done. The brain reads the project first and asks before it plans anything big.
 
+## How Pyloxa is different
+
+Some platforms let agents run like a company: assigning their own work, waking up on a schedule and running around the clock. Pyloxa keeps you in charge:
+
+- Agents work only on what you ask for and never create work of their own.
+- An agent saying it's done doesn't count. Pyloxa runs the verification commands you approved in the task's own worktree.
+- Pyloxa never uses modes that skip every permission check, such as `--dangerously-skip-permissions`. Changes outside the allowed write scope are never accepted automatically.
+- Pyloxa never reads, copies or sends CLI credentials, and never shares your subscription with anyone.
+- It runs natively on Windows 10 and 11, with no WSL, Docker, server or database to set up.
+
 ## Costs, privacy and credentials
 
 - The free version of Pyloxa is free, and Pro is an optional subscription. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
@@ -129,6 +139,16 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
    想按用量付費、不用訂閱的話，在「連線」頁把那個 CLI 改成「改用 API Key」。Gemini CLI 一律使用 API Key。
 2. 開啟一個 git repo 的專案資料夾。
 3. 說出你想完成的事。大腦會先讀過專案，規模大一點的計畫會先問過你。
+
+### 和其他工具的差別
+
+有些平台讓 Agent 像一家公司一樣自己排工作、定時醒來、全天運作。Pyloxa 讓你掌握每一步：
+
+- Agent 只做你提出的需求，不會自己生出新的工作。
+- Agent 說做完了不算數：你核准的驗證命令由 Pyloxa 在工作自己的 worktree 執行。
+- 不使用 `--dangerously-skip-permissions` 這類略過所有權限確認的模式；改到寫入範圍以外的檔案時，不會自動接受。
+- 不讀取、複製或傳送 CLI 的登入憑證，也不把你的訂閱分給別人用。
+- 直接在 Windows 10、11 執行，不需要 WSL、Docker，也不用架伺服器或資料庫。
 
 ### 費用、隱私與憑證
 
