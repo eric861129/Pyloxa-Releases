@@ -48,8 +48,10 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 
 ## Costs, privacy and credentials
 
-- Pyloxa is free. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
+- The free version of Pyloxa is free, and Pro is an optional subscription. Agent usage counts against your own Claude and ChatGPT subscriptions, or against your own API key if you choose one; Pyloxa does not resell or proxy any AI service.
 - Pyloxa never sends your code or prompts to us. Your code goes only where the CLIs send it, under Anthropic's, OpenAI's and Google's terms.
+- The free version needs no account and never connects to our account service. The trial, the Pro preview and Pro need you to sign in at `account.pyloxa.com` with Google, GitHub or a code sent to your email, and the account is used only for licensing. Once signed in, Pyloxa refreshes its license about once a day, sending only a device ID, a device credential and the app and Windows versions. Payments go through Polar as the merchant of record; we never see your card. See the [privacy policy](https://pyloxa.com/privacy/#pro-account).
+- Pro notifications, only if you set them up, go from your computer directly to the Telegram bot, Discord webhook or HTTPS webhook you choose, with the project name, the event and the plan or task title.
 - Pyloxa asks GitHub for the latest Pyloxa version and the [CLI compatibility catalog](#cli-compatibility-catalog) at startup and every 12 hours, with no project or usage data. Turn it off in **Settings → Notifications and updates**.
 - Shared memory stays on your computer. Memories are added to the prompts of every agent you use, so they reach each of those agents' providers.
 - While Pyloxa is open, it listens on random ports on `127.0.0.1` so the agents it starts can search and propose shared memories. Other computers can't connect, and each task's key stops working when the task ends.
@@ -130,8 +132,10 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 
 ### 費用、隱私與憑證
 
-- Pyloxa 免費。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
+- Pyloxa 的免費版免費，Pro 是選購的訂閱。Agent 的用量算在你自己的 Claude 與 ChatGPT 訂閱裡，或改用你自己的 API Key；Pyloxa 不轉售、也不代理任何 AI 服務。
 - Pyloxa 不會把你的程式碼或提示內容傳給我們。你的程式碼只會送到 CLI 原本會送去的地方，適用 Anthropic、OpenAI 與 Google 的條款。
+- 免費版不需要帳號，也不會連到我們的帳號服務。試用、Pro 預覽與 Pro 需要在 `account.pyloxa.com` 以 Google、GitHub 或 email 驗證碼登入，帳號只用來授權。登入後 Pyloxa 大約每天更新一次授權，只送裝置 ID、裝置憑證與 App、Windows 的版本。付款由擔任代理銷售商的 Polar 處理，我們看不到你的卡號。詳見[隱私權政策](https://pyloxa.com/zh-TW/privacy/#pro-account)。
+- Pro 的通知只在你設定之後，從你的電腦直接送到你指定的 Telegram bot、Discord webhook 或 HTTPS webhook，內容是專案名稱、事件與計畫或工作的標題。
 - Pyloxa 啟動時和每 12 小時會向 GitHub 查詢最新版本與 [CLI 相容性目錄](#cli-相容性目錄)，不含任何專案或使用資料；可以在「設定 → 通知與更新」關閉。
 - 共用記憶只存在你的電腦。記憶會帶進你使用的每個 Agent 的 prompt，所以會送到這些 Agent 的供應商。
 - Pyloxa 開著的期間，會在 `127.0.0.1` 的隨機埠等候連線，讓它啟動的 Agent 搜尋與提議共用記憶。其他電腦連不上，每個工作的金鑰在工作結束後就失效。
