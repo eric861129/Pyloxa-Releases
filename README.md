@@ -31,7 +31,7 @@ New installs start with a default flow: Claude Code is the brain and handles fro
 2. Optional: check the file against the SHA-256 listed in the release notes.
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.10.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.2.0.exe -Algorithm SHA256
    ```
 
 3. Run the installer. It is not code-signed yet, so Windows SmartScreen may say "Windows protected your PC". Choose **More info**, then **Run anyway**.
@@ -43,6 +43,7 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 
 1. Open Pyloxa. A setup wizard checks git and Node.js, can install the agent CLIs with their official npm commands, and shows the sign-in command to copy into a terminal (`claude auth login` or `codex login`); it re-detects when you come back. Then you pick the brain and who does what. You can reopen the wizard from **Settings**, and the **Connections** page shows each CLI's status.
    To pay per use instead of a subscription, choose **Use an API key** for that CLI on the **Connections** page. Gemini CLI always uses an API key.
+   To see how it works before using your own code, choose **Start the test drive** at the end of the wizard. Pyloxa creates a small sample project with a hidden bug: one agent fixes it and, with a second CLI, another tests the fix.
 2. Open a project folder that is a git repository.
 3. Describe what you want done. The brain reads the project first and asks before it plans anything big.
 
@@ -51,6 +52,7 @@ Pyloxa does not update itself yet. It tells you when a new version is out; downl
 Some platforms let agents run like a company: assigning their own work, waking up on a schedule and running around the clock. Pyloxa keeps you in charge:
 
 - Agents work only on what you ask for and never create work of their own.
+- Every finished plan has a verification card listing who did each task, whether it was cross-tested and which commands Pyloxa ran, and pull requests can carry the same card.
 - An agent saying it's done doesn't count. Pyloxa runs the verification commands you approved in the task's own worktree.
 - Pyloxa never uses modes that skip every permission check, such as `--dangerously-skip-permissions`. Changes outside the allowed write scope are never accepted automatically.
 - Pyloxa never reads, copies or sends CLI credentials, and never shares your subscription with anyone.
@@ -125,7 +127,7 @@ Pyloxa 是免費的 Windows App，讓你在一段對話裡同時和多個 AI 程
 2. 選用：比對安裝檔與版本說明裡的 SHA-256。
 
    ```powershell
-   Get-FileHash .\Pyloxa-Setup-0.1.10.exe -Algorithm SHA256
+   Get-FileHash .\Pyloxa-Setup-0.2.0.exe -Algorithm SHA256
    ```
 
 3. 執行安裝檔。安裝檔目前還沒有程式碼簽章，Windows SmartScreen 可能顯示「Windows 已保護您的電腦」，請按「其他資訊」，再按「仍要執行」。
@@ -137,6 +139,7 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 
 1. 開啟 Pyloxa。設定精靈會檢查 git 與 Node.js，可以用官方的 npm 命令安裝 Agent CLI，並提供可以複製到終端機的登入指令（`claude auth login` 或 `codex login`），回到 Pyloxa 時自動重新偵測；接著選大腦與分工。設定精靈可以從「設定」重新開啟，「連線」頁會顯示每個 CLI 的狀態。
    想按用量付費、不用訂閱的話，在「連線」頁把那個 CLI 改成「改用 API Key」。Gemini CLI 一律使用 API Key。
+   想先看看怎麼運作、不拿自己的程式碼冒險的話，可以在設定精靈的最後按「開始試駕」：Pyloxa 建立一個藏了 bug 的小範例專案，一個 Agent 修，有第二個 CLI 時由另一家測試。
 2. 開啟一個 git repo 的專案資料夾。
 3. 說出你想完成的事。大腦會先讀過專案，規模大一點的計畫會先問過你。
 
@@ -145,6 +148,7 @@ Pyloxa 目前不會自動更新。有新版本時 Pyloxa 會提示你，請到�
 有些平台讓 Agent 像一家公司一樣自己排工作、定時醒來、全天運作。Pyloxa 讓你掌握每一步：
 
 - Agent 只做你提出的需求，不會自己生出新的工作。
+- 每個完成的計畫都有驗證報告卡，列出每個工作由誰做、有沒有交叉測試、Pyloxa 執行了哪些命令；PR 也可以附上同一張報告卡。
 - Agent 說做完了不算數：你核准的驗證命令由 Pyloxa 在工作自己的 worktree 執行。
 - 不使用 `--dangerously-skip-permissions` 這類略過所有權限確認的模式；改到寫入範圍以外的檔案時，不會自動接受。
 - 不讀取、複製或傳送 CLI 的登入憑證，也不把你的訂閱分給別人用。
