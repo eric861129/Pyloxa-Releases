@@ -7,8 +7,7 @@
       "verified": [
         "2.1.316",
         "2.1.317",
-        "2.1.318",
-        "2.1.327"
+        "2.1.318"
       ],
       "models": [
         "opus",
@@ -63,5 +62,20 @@
       "minimum": "22.0.0"
     }
   },
-  "advisories": []
+  "advisories": [
+    {
+      "id": "claude-code-2-1-327-update",
+      "severity": "warning",
+      "cli": "claude-code",
+      "versions": [
+        "2.1.316",
+        "2.1.317",
+        "2.1.318"
+      ],
+      "message": {
+        "en": "On Windows, updating Claude Code from this version to 2.1.327 can fail, both with claude update and from Pyloxa. The updater renames claude.exe first, so claude stops working until it is fixed. Please don't update for now. If it already failed, copy %USERPROFILE%\\.local\\share\\claude\\versions\\2.1.327 to %USERPROFILE%\\.local\\bin\\claude.exe.",
+        "zh-TW": "在 Windows 上，Claude Code 從這一版更新到 2.1.327 可能會失敗，用 claude update 或在 Pyloxa 更新都一樣。更新程式會先把 claude.exe 改名，失敗後 claude 就不能用。請先不要更新。如果已經失敗，把 %USERPROFILE%\\.local\\share\\claude\\versions\\2.1.327 複製成 %USERPROFILE%\\.local\\bin\\claude.exe 就能恢復。"
+      }
+    }
+  ]
 }
