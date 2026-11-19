@@ -3,7 +3,7 @@
   "updated": "2026-11-19",
   "clis": {
     "claude-code": {
-      "latest": "2.1.327",
+      "latest": "2.1.328",
       "verified": [
         "2.1.316",
         "2.1.317",
@@ -34,7 +34,7 @@
       "changelog": "https://github.com/openai/codex/releases"
     },
     "gemini-cli": {
-      "latest": "0.68.0",
+      "latest": "0.69.0",
       "verified": [
         "0.42.0",
         "0.66.0",
